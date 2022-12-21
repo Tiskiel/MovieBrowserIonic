@@ -1,273 +1,184 @@
 * {
-  color: white;
+  color: #fff
 }
 
 #bodyModal {
-  ion-row {
-    margin-bottom: 10px;
+  height: 100vh
+}
+
+#bodyModal ion-row {
+  margin-bottom: 10px
+}
+
+#bodyModal #mobileLittleScreen,
+#bodyModal #mobileScreen,
+#bodyModal #webScreen {
+  padding-left: 10px
+}
+
+#bodyModal #mobileLittleScreen #timeAndRateLittleMobile,
+#bodyModal #mobileScreen #timeAndRateMobile,
+#bodyModal #webScreen #timeAndRate {
+  display: flex;
+  align-items: center
+}
+
+#bodyModal #mobileLittleScreen #timeAndRateLittleMobile ion-text,
+#bodyModal #mobileScreen #timeAndRateMobile ion-text,
+#bodyModal #webScreen #timeAndRate ion-text {
+  padding-top: 2px
+}
+
+#bodyModal #mobileLittleScreen #timeAndRateLittleMobile ion-text#timeTextLittleMobile,
+#bodyModal #mobileScreen #timeAndRateMobile ion-text#timeTextMobile,
+#bodyModal #webScreen #timeAndRate ion-text#timeText {
+  margin-right: 20px
+}
+
+#bodyModal #webScreen .listCardMovieCarousel {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  overflow: auto;
+  max-width: 100%
+}
+
+#bodyModal #webScreen .listCardMovieCarousel::-webkit-scrollbar {
+  width: 10px;
+  height: 6px
+}
+
+#bodyModal #webScreen .listCardMovieCarousel::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px
+}
+
+#bodyModal #webScreen .listCardMovieCarousel::-webkit-scrollbar-thumb {
+  background: #b30000;
+  border-radius: 10px
+}
+
+#bodyModal #webScreen .listCardMovieCarousel::-webkit-scrollbar-thumb:hover {
+  background: #b30000
+}
+
+#bodyModal #mobileScreenBottom .listCardMovieCarousel .relatedMovieCard,
+#bodyModal #webScreen .listCardMovieCarousel .relatedMovieCard {
+  height: 393px;
+  min-width: 280px;
+  max-width: 280px;
+  background-size: cover;
+  cursor: pointer
+}
+
+#bodyModal #mobileScreenBottom .listCardMovieCarousel .relatedMovieCard ion-card-header,
+#bodyModal #webScreen .listCardMovieCarousel .relatedMovieCard ion-card-header {
+  height: 393px
+}
+
+#bodyModal #mobileScreenBottom .listCardMovieCarousel .relatedMovieCard ion-card-header ion-card-title,
+#bodyModal #webScreen .listCardMovieCarousel .relatedMovieCard ion-card-header ion-card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10%;
+  width: 80%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff 5;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  color: #fff
+}
+
+#bodyModal #mobileScreenBottom .listCardMovieCarousel .relatedMovieCard ion-card-header ion-card-subtitle,
+#bodyModal #webScreen .listCardMovieCarousel .relatedMovieCard ion-card-header ion-card-subtitle {
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  width: 25%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff 5;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  color: #fff
+}
+
+#bodyModal #mobileScreenBottom .listCardMovieCarousel .relatedMovieCard ion-card-header ion-card-subtitle ion-text,
+#bodyModal #webScreen .listCardMovieCarousel .relatedMovieCard ion-card-header ion-card-subtitle ion-text {
+  padding-left: .5rem;
+  padding-top: .2rem
+}
+
+#bodyModal #mobileLittleScreen .genre,
+#bodyModal #mobileScreen .genre,
+#bodyModal #webScreen .genre {
+  margin-right: 7px;
+  backdrop-filter: blur(4.81px);
+  background: rgba(250, 241, 204, .05);
+  border: 1px solid #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 10px
+}
+
+@media (min-width:0) {
+  #bodyModal #mobileScreen {
+    display: none
   }
 
-  height:100vh;
-
-  #webScreen {
-    @media (min-width: 0) AND (max-width:900px) {
-      display: none;
-    }
-
-    @media (min-width: 900px) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    #timeAndRate {
-      display: flex;
-      align-items: center;
-
-      ion-text {
-        padding-top: 2px;
-
-        &#timeText {
-          margin-right: 20px;
-        }
-      }
-    }
-
-    .listCardMovieCarousel {
-      display: inline-flex;
-      flex-flow: row nowrap;
-      overflow: auto;
-      max-width: 100%;
-
-      &::-webkit-scrollbar {
-        width: 10px;
-        height: 6px;
-      }
-
-      &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey;
-        border-radius: 10px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: #b3000056;
-        border-radius: 10px;
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        background: #b30000;
-      }
-
-      .relatedMovieCard {
-        height: 393px;
-        min-width: 280px;
-        max-width: 280px;
-        background-size: cover;
-        cursor: pointer;
-
-        ion-card-header {
-          height: 393px;
-          ion-card-title {
-            position: absolute;
-            bottom: 10px;
-            left: 10%;
-            width: 80%;
-            height: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #FFFFFF55;
-            backdrop-filter: blur(5px);
-            border-radius: 20px;
-            color: white;
-          }
-
-          ion-card-subtitle {
-            position: absolute;
-            top: 10px;
-            right: 10%;
-            width: 25%;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #FFFFFF55;
-            backdrop-filter: blur(5px);
-            border-radius: 20px;
-            color: white;
-
-            ion-text {
-              padding-left: 0.5rem;
-              padding-top: 0.2rem;
-            }
-          }
-        }
-      }
-    }
-
-    padding-left: 10px;
-
-    .genre {
-      margin-right: 7px;
-      backdrop-filter: blur(4.81px);
-      background: hsla(48, 83%, 89%, .05);
-      border: 1px solid #fff;
-      border-radius: 15px;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      margin-top: 8px;
-      padding: 10px;
-    }
-  }
-
-  #mobileScreen {
-    @media (min-width: 0) {
-      display: none;
-    }
-
-    @media (min-width: 600px) AND (max-width:900px) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (min-width: 900px) {
-      display: none;
-    }
-
-    #timeAndRateMobile {
-      display: flex;
-      align-items: center;
-
-      ion-text {
-        padding-top: 2px;
-
-        &#timeTextMobile {
-          margin-right: 20px;
-        }
-      }
-    }
-
-    padding-left: 10px;
-
-    .genre {
-      margin-right: 7px;
-      backdrop-filter: blur(4.81px);
-      background: hsla(48, 83%, 89%, .05);
-      border: 1px solid #fff;
-      border-radius: 15px;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      margin-top: 8px;
-      padding: 10px;
-    }
-  }
-
-  #mobileLittleScreen {
-    @media (min-width: 0) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (min-width: 600px) {
-      display: none;
-    }
-
-    #timeAndRateLittleMobile {
-      display: flex;
-      align-items: center;
-
-      ion-text {
-        padding-top: 2px;
-
-        &#timeTextLittleMobile {
-          margin-right: 20px;
-        }
-      }
-    }
-
-    padding-left: 10px;
-
-    .genre {
-      margin-right: 7px;
-      backdrop-filter: blur(4.81px);
-      background: hsla(48, 83%, 89%, .05);
-      border: 1px solid #fff;
-      border-radius: 15px;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      margin-top: 8px;
-      padding: 10px;
-    }
-  }
-
-  #mobileScreenBottom {
-    @media (min-width: 0) AND (max-width: 900px) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (min-width: 900px) {
-      display: none;
-    }
-
-    .listCardMovieCarousel {
-      display: inline-flex;
-      flex-flow: row wrap;
-      justify-content: space-evenly;
-
-      .relatedMovieCard {
-        height: 393px;
-        min-width: 280px;
-        max-width: 280px;
-        background-size: cover;
-        cursor: pointer;
-
-        ion-card-header {
-          height: 393px;
-
-          ion-card-title {
-            position: absolute;
-            bottom: 10px;
-            left: 10%;
-            width: 80%;
-            height: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #FFFFFF55;
-            backdrop-filter: blur(5px);
-            border-radius: 20px;
-            color: white;
-          }
-
-          ion-card-subtitle {
-            position: absolute;
-            top: 10px;
-            right: 10%;
-            width: 25%;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #FFFFFF55;
-            backdrop-filter: blur(5px);
-            border-radius: 20px;
-            color: white;
-
-            ion-text {
-              padding-left: 0.5rem;
-              padding-top: 0.2rem;
-            }
-          }
-        }
-      }
-    }
+  #bodyModal #mobileLittleScreen {
+    display: flex;
+    flex-direction: column
   }
 }
 
+@media (min-width:600px) and (max-width:900px) {
+  #bodyModal #mobileScreen {
+    display: flex;
+    flex-direction: column
+  }
+}
+
+@media (min-width:600px) {
+  #bodyModal #mobileLittleScreen {
+    display: none
+  }
+}
+
+@media (min-width:0) and (max-width:900px) {
+  #bodyModal #webScreen {
+    display: none
+  }
+
+  #bodyModal #mobileScreenBottom {
+    display: flex;
+    flex-direction: column
+  }
+}
+
+@media (min-width:900px) {
+  #bodyModal #webScreen {
+    display: flex;
+    flex-direction: column
+  }
+
+  #bodyModal #mobileScreen,
+  #bodyModal #mobileScreenBottom {
+    display: none
+  }
+}
+
+#bodyModal #mobileScreenBottom .listCardMovieCarousel {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly
+}
